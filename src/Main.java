@@ -13,14 +13,12 @@ public class Main {
   team.add(praise);
   team.add(victor);
 
-  praise.usePhone();
-  praise.usePhone();
-  praise.usePhone();
-  victor.usePhone();
-  victor.usePhone();
-  victor.usePhone();
-  victor.usePhone();
-  victor.usePhone();
+  for (Programmer dev : team){
+   System.out.println("---" + dev.getName() + " is starting work ---");
+   dev.usePhone();
+   dev.usePhone();
+  }
+
   try {
    System.out.println("\n---🚀 Smart Server SHIFT ---");
    for (Programmer dev : team) {

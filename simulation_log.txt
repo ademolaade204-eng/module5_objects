@@ -1,0 +1,6 @@
+--- Log Entry---
+ -> CRITICAL: victor is at 85% -> CRITICAL: praise is at 95% -> CRITICAL: Kemi is at 100% -> CRITICAL: Itel 20,000mAh Power Bank is at 100%--- Log Entry---
+ -> CRITICAL: victor is at 85%
+ -> CRITICAL: praise is at 95%
+ -> CRITICAL: Kemi is at 100%
+ -> CRITICAL: Itel 20,000mAh Power Bank is at 100%
