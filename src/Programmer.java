@@ -1,3 +1,4 @@
+import java.io.IOException;
 public abstract class Programmer implements Chargeable {
     protected String name;
     protected int batteryLife = 100;
@@ -41,6 +42,6 @@ public abstract class Programmer implements Chargeable {
         this.maxBatteryHealth -= 5;
         System.out.println("⚠️ Hardware Alert:" + this.name + "'s maximum battery capacity degraded to " + this.maxBatteryHealth + "%");
     }
-        public abstract void usePhone()  throws BatteryExhaustedException;
+        public abstract void usePhone()  throws BatteryExhaustedException,IOException;
         }
 

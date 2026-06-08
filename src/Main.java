@@ -1,9 +1,11 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 public class Main {
- public static void main(String[] args) throws BatteryExhaustedException {
+ public static void main(String[] args) throws BatteryExhaustedException,IOException {
   JavaStudent victor = new JavaStudent("victor", "Java");
   JavaStudent praise = new JavaStudent("praise", "python");
   FrontendDev kemi = new FrontendDev("Kemi");
@@ -93,14 +95,20 @@ public class Main {
   if (alert.length() > 0) {
    System.out.println("\n=== WHITE ALERTS ===");
    System.out.println(alert.toString());
-
+  }
    try (BufferedWriter writer = new BufferedWriter(new FileWriter("simulation_log.txt", true))) {
+    LocalDateTime now = LocalDateTime.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    String date = now.format(formatter);
+    String timestamp = now.format(formatter);
+    String formattedMessage = "[" + timestamp + "]" + alert.toString();
+    writer.write(formattedMessage);
+    writer.newLine();
     writer.write("--- Log Entry---\n");
     writer.write(alert.toString());
     System.out.println("✅ Alerts permanently logged to simulation_log.txt!");
    } catch (IOException e) {
     System.out.println(" ❌ Could not save to log file: " + e.getMessage());
    }
-  }
  }
 }

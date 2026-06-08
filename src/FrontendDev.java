@@ -1,3 +1,6 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 public class FrontendDev extends Programmer {
     public FrontendDev(String name) {
         super(name);
@@ -16,7 +19,13 @@ public class FrontendDev extends Programmer {
     }
 
     @Override
-    public void usePhone() throws BatteryExhaustedException {
-        System.out.println(this.name + " is checking UI designs on their phone!");
+    public void usePhone() throws BatteryExhaustedException,IOException{
+        String logMessage = this.name + " is checking UI designs on their phone!";
+        System.out.println(logMessage);
+        FileWriter file = new FileWriter("simulation_log.txt", true);
+        PrintWriter logger = new PrintWriter(file);
+
+        logger.println(logMessage);
+        logger.close();
     }
 }
